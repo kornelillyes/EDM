@@ -65,6 +65,7 @@ Resonant Converter Adapted to Ultra Wide Output Voltage Range") but using LLC re
 # Some further considerations
 
 **Pulse Generation**
+
 It is possible to use this described phase-shifted dual LCC topology to supply a constant current, especially with a current-smoothing inductor on the output (maybe, sounds good to my intuition). It can be used alongside a high-power FET or IGBT switch to make an EDM pulse generator. 
 
 Or, by Shanon and some added margin, we can use feedback and the set point to turn the supply on and off, by having a maximum EDM pulse frequency, multiplying it by 5, taking our samples for feedback at this frequency, and again multiplying by around five times to get our switching frequency. Five is more or less practical, *theoretically*, we could do with 2. In practice, it's often not enough. But this way we waste less power at the cost of reduced EDM pulse frequency and increased switching frequency. Also, it's possible this idea would lead to problems with pulse ignition, this would have to be verified by testing.  
@@ -72,5 +73,6 @@ Or, by Shanon and some added margin, we can use feedback and the set point to tu
 We can supplement the feedback by feedforwarding the coming pulses too, increasing response and stability.
 
 **EDM Feedrate**
+
 EDM feed rate would have to be controlled dynamically by measuring each pulse's voltage levels and classifying it accordingly. A fuzzy or similar controller could then set the feed rate based on the frequency of a given pulse type. 
 

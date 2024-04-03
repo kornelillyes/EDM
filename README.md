@@ -78,7 +78,7 @@ Maximum voltage has to be controlled as this topology would lead to an overvolta
 
 **EDM Feedrate**
 
-EDM feed rate would have to be controlled dynamically by measuring each pulse's voltage levels and classifying it accordingly. A fuzzy or similar controller could then set the feed rate based on the frequency of a given pulse type. 
+EDM feed rate would have to be controlled dynamically by measuring each pulse's voltage levels and classifying it accordingly. A fuzzy or similar controller could then set the feed rate based on the relative frequency of a given pulse type. 
 
 **Safety Isolation**
 

@@ -45,7 +45,7 @@ The LCC or series-parallel resonant topology, or T13 in "Classification and comp
 
 I wanted to build something with this LCC topology in mind, after crunching the numbers on various buck-type schemes and being horrified over and over again by the inefficient nature and overall complicated power flow if one wants to go 110/230 V > EDM Supply. It takes like 3-4 stages of power conversion to reasonably do it, with safety isolation. (I'm only a third of an EE so maybe I'm off on that point but I ran a few designs by really rough numbers and estimates on paper and in SPICE and that was the best I could manage).
 
-# The meat of the idea
+# The core of the idea
 
 As I was thinking, it dawned on me, that by the time the voltage gets through the resonant tank, it roughly estimates a sinusoidal wave. Of course not perfectly, but meh, good enough for an idea. Then this sinusoidal wave enters the transformer for conversion. Maybe if we had two sine waves in that transformer, at the same frequency, they would be added... Interestingly, the only thing that changes is the amplitude. **And that amplitude is dependent on the instantaneous phase!**
 
@@ -62,5 +62,11 @@ As I was thinking through all of this, it hit me, that it all works too perfectl
 After some digging, I found a Chinese paper where the authors actually did this, (Qi Cao, Zhiqing Li, Bo Xue, and Haoyu Wang, "Fixed Frequency Phase Shift Modulated LLC
 Resonant Converter Adapted to Ultra Wide Output Voltage Range") but using LLC resonant tanks, and they ended up with a fairly good, wide-range constant voltage source (LLC resonant tanks exhibit a constant voltage nature at their resonant frequency). And they worked out all the math for the LLC case! Wonderful! Also kind of sad as my idea isn't as original as I first thought it to be, but still a fairly exotic one, and in this specific application and configuration, definitely a novel one, to my knowledge at least.
 
+# Some further considerations
 
+It is possible to use this described phase-shifted dual LCC topology to supply a constant current, especially with a current-smoothing inductor on the output (maybe, sounds good to my intuition). It can be used alongside a high-power FET or IGBT switch to make an EDM pulse generator. 
+
+Or, by Shanon and some added margin, we can use feedback and the set point to turn the supply on and off, by having a maximum EDM pulse frequency, multiplying it by 5, taking our samples for feedback at this frequency, and again multiplying by around five times to get our switching frequency. Five is more or less practical, theoretically, we could do with 2. In practice, it's often not enough. But this way we waste less power at the cost of reduced EDM pulse frequency and increased switching frequency. Also, it's possible this idea would lead to problems with pulse ignition, this would have to be verified by testing.  
+
+We can supplement the feedback by feedforwarding the coming pulses too, increasing response and stability. 
 

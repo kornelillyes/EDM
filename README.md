@@ -105,6 +105,8 @@ I have simulated the phase shifted resonant tank circuits in Multisim and the re
 
 According to the SPICE simulation of course, which could mean anything and nothing in real life. But the authors of the Chinese paper made it work allegedly. 
 
+![image](https://github.com/kornelillyes/EDM/assets/165934960/7f1666ab-f88e-4d8c-9c58-7e05f11a3f01)
+
 # TL;DR
 A new current source topology is proposed for EDM pulse generation and also for other possible applications. It works by phase-shifting two (or multiple, perhaps more?) resonant tanks.
 

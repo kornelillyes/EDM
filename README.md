@@ -103,7 +103,7 @@ High AC currents on the capacitors make for demanding selection criteria.
 
 I have simulated the phase shifted resonant tank circuits in Multisim and the results seem promising, with tweaking the component parameters this can be a workable design. 
 
-According to the SPICE simulation of course, which could mean anything and nothing in real life. But the authors of the Chinese paper made it work allegedly. 
+According to the SPICE simulation of course, which could mean anything and nothing in real life, but then again, the authors of the Chinese paper made it work. 
 
 ![image](https://github.com/kornelillyes/EDM/assets/165934960/7f1666ab-f88e-4d8c-9c58-7e05f11a3f01)
 

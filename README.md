@@ -55,9 +55,12 @@ The frequency is mostly constant (*not really, more at 11*) and should be somewh
 But in my mind, this should be okay too, because as you change the instantaneous frequency to change the phase, it changes the current in the direction you want it to change in the first place. 
 As the phase stabilizes so does the frequency. If we limit the maximum change of phase, the effect of changing the frequency can be minimized. (I think intuitively, no rigorous math here).
 
-Also for changes decreasing the frequency, they should be limited to avoid getting into the Zero Current Switching danger zone. The frequency should also be high enough to help avoid this, but low enough to keep the constant current nature of the supply as pure as possible. The more we deviate from the resonant frequency, the worse the supply does as a constant CS.
+Also for changes decreasing the frequency, they should be limited to avoid getting into the Zero Current Switching danger zone (Zero Voltage Switching = GOOD, Zero Current Switching  = BAD, to put it shortly, also, to my knowledge). The frequency should also be high enough to help avoid this, but low enough to keep the constant current nature of the supply as pure as possible. The more we deviate from the resonant frequency, the worse the supply does as a constant CS.
 
 As I was thinking through all of this, it hit me, that it all works too perfectly (on paper), and good original ideas are hard to come by, so someone else must have thought of this by now.
 
-After some digging, I found a Chinese paper that actually did this, but with using LLC resonant tanks, and they ended up with a fairly good, wide-range constant voltage source (LLC resonant tanks exhibit a constant voltage nature at their resonant frequency). And they worked out all the math for the LLC case! Wonderful!
+After some digging, I found a Chinese paper where the authors actually did this, (Qi Cao, Zhiqing Li, Bo Xue, and Haoyu Wang, "Fixed Frequency Phase Shift Modulated LLC
+Resonant Converter Adapted to Ultra Wide Output Voltage Range") but using LLC resonant tanks, and they ended up with a fairly good, wide-range constant voltage source (LLC resonant tanks exhibit a constant voltage nature at their resonant frequency). And they worked out all the math for the LLC case! Wonderful! Also kind of sad as my idea isn't as original as I first thought it to be, but still a fairly exotic one, and in this specific application and configuration, definitely a novel one, to my knowledge at least.
+
+
 

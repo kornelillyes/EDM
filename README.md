@@ -72,7 +72,13 @@ Or, by Shanon and some added margin, we can use feedback and the set point to tu
 
 We can supplement the feedback by feedforwarding the coming pulses too, increasing response and stability.
 
+**Voltage**
+
+Maximum voltage has to be controlled as this topology would lead to an overvoltage in a no-load condition. This can be simple on-off, bang-bang/one-shot control, or by any other means.
+
 **EDM Feedrate**
 
 EDM feed rate would have to be controlled dynamically by measuring each pulse's voltage levels and classifying it accordingly. A fuzzy or similar controller could then set the feed rate based on the frequency of a given pulse type. 
 
+# TL;DR
+A new current source topology is proposed for EDM pulse generation and also for other possible applications. It works by phase-shifting two (or multiple, perhaps more?) resonant tanks.

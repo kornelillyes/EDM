@@ -53,3 +53,11 @@ So that was my idea. Let's use a transformer with two primary windings, connect 
 The frequency is mostly constant (*not really, more at 11*) and should be somewhat above the resonant frequency of the tank, so we're constantly in resonant switching, the switching elements see no power. The output current is more or less only dependent on the phase between the two resonant tanks. In practice it depends on the load too, but quite linearly and predictably, on paper. When you change the phase, however, the instantaneous frequency changes as well because **frequency is the derivative of phase**. 
 
 But in my mind, this should be okay too, because as you change the instantaneous frequency to change the phase, it changes the current in the direction you want it to change in the first place. 
+As the phase stabilizes so does the frequency. If we limit the maximum change of phase, the effect of changing the frequency can be minimized. (I think intuitively, no rigorous math here).
+
+Also for changes decreasing the frequency, they should be limited to avoid getting into the Zero Current Switching danger zone. The frequency should also be high enough to help avoid this, but low enough to keep the constant current nature of the supply as pure as possible. The more we deviate from the resonant frequency, the worse the supply does as a constant CS.
+
+As I was thinking through all of this, it hit me, that it all works too perfectly (on paper), and good original ideas are hard to come by, so someone else must have thought of this by now.
+
+After some digging, I found a Chinese paper that actually did this, but with using LLC resonant tanks, and they ended up with a fairly good, wide-range constant voltage source (LLC resonant tanks exhibit a constant voltage nature at their resonant frequency). And they worked out all the math for the LLC case! Wonderful!
+

@@ -80,5 +80,16 @@ Maximum voltage has to be controlled as this topology would lead to an overvolta
 
 EDM feed rate would have to be controlled dynamically by measuring each pulse's voltage levels and classifying it accordingly. A fuzzy or similar controller could then set the feed rate based on the frequency of a given pulse type. 
 
+# Possible Issues
+
+1, The current somehow circulates back through the transformer from one resonant tank to the other, essentially shorting out internally through two resonant tanks and the primary coils. I don't think this can be the case as the Chinese paper got LLC to work.
+
+2, Hard to control somehow? I haven't worked out the feedback in detail but maybe the system is in fact hard to control IRL for some reason. This also seems unlikely bc. the Chinese paper.
+
+3, Somehow this layout is already patented. I tried to look and didn't find anything though.
+
+4, Transformer design. Maybe this layout is prone to saturation?
+
+
 # TL;DR
 A new current source topology is proposed for EDM pulse generation and also for other possible applications. It works by phase-shifting two (or multiple, perhaps more?) resonant tanks.

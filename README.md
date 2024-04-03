@@ -47,19 +47,19 @@ I wanted to build something with this LCC topology in mind, after crunching the 
 
 # The core of the idea
 
-As I was thinking, it dawned on me, that by the time the voltage gets through the resonant tank, it roughly estimates a sinusoidal wave. Of course not perfectly, but meh, good enough for an idea. Then this sinusoidal wave enters the transformer for conversion. Maybe if we had two sine waves in that transformer, at the same frequency, they would be added... Interestingly, the only thing that changes is the amplitude. **And that amplitude is dependent on the instantaneous phase!**
+As I was thinking, it dawned on me, that by the time the voltage gets through the resonant tank, it roughly estimates a sinusoidal wave. Then this "sinusoidal" wave enters the transformer for conversion. Maybe if we had two sine waves in that transformer, at the same frequency, they would be added... Interestingly, the only thing that changes is the amplitude. **And that amplitude is dependent on the instantaneous phase!**
 
 So that was my idea. Let's use a transformer with two primary windings, connect them to two separate resonant tanks, and drive the tanks with a phase difference!
 The frequency is mostly constant (*not really, more at 11*) and should be somewhat above the resonant frequency of the tank, so we're constantly in resonant switching, the switching elements see no power. The output current is more or less only dependent on the phase between the two resonant tanks. In practice it depends on the load too, but quite linearly and predictably, on paper. When you change the phase, however, the instantaneous frequency changes as well because **frequency is the derivative of phase**. 
 
 But in my mind, this should be okay too, because as you change the instantaneous frequency to change the phase, it changes the current in the direction you want it to change in the first place. 
-As the phase stabilizes so does the frequency. If we limit the maximum change of phase, the effect of changing the frequency can be minimized. (I think intuitively, no rigorous math here).
+As the phase stabilizes so does the frequency. If we limit the maximum change of phase, the effect of changing the frequency can be minimized. (I think intuitively, no rigorous proof here).
 
 Also for changes decreasing the frequency, they should be limited to avoid getting into the Zero Current Switching danger zone (Zero Voltage Switching = GOOD, Zero Current Switching  = BAD, to put it shortly, also, to my knowledge). The frequency should also be high enough to help avoid this, but low enough to keep the constant current nature of the supply as pure as possible. The more we deviate from the resonant frequency, the worse the supply does as a constant CS.
 
 As I was thinking through all of this, it hit me, that it all works too perfectly (on paper), and good original ideas are hard to come by, so someone else must have thought of this by now.
 
-After some digging, I found a Chinese paper where the authors actually did this, (Qi Cao, Zhiqing Li, Bo Xue, and Haoyu Wang, "Fixed Frequency Phase Shift Modulated LLC
+After some digging, I found a Chinese paper where the authors did something extremely similar this, (Qi Cao, Zhiqing Li, Bo Xue, and Haoyu Wang, "Fixed Frequency Phase Shift Modulated LLC
 Resonant Converter Adapted to Ultra Wide Output Voltage Range") but using LLC resonant tanks, and they ended up with a fairly good, wide-range constant voltage source (LLC resonant tanks exhibit a constant voltage nature at their resonant frequency). And they worked out all the math for the LLC case! Wonderful! Also kind of sad as my idea isn't as original as I first thought it to be, but still a fairly exotic one, and in this specific application and configuration, definitely a novel one, to my knowledge at least.
 
 # Some further considerations
@@ -101,14 +101,14 @@ High AC currents on the capacitors make for demanding selection criteria.
 
 # Work so far
 
-I have simulated the phase shifted resonant tank circuits in Multisim and the results seem promising, with tweaking the component parameters this can be a workable design. 
+I have simulated the phase-shifted resonant tank circuits in Multisim and the results seem promising, with tweaking the component parameters this can be a workable design. 
 
 According to the SPICE simulation of course, which could mean anything and nothing in real life, but then again, the authors of the Chinese paper made it work. 
 
 ![image](https://github.com/kornelillyes/EDM/assets/165934960/7f1666ab-f88e-4d8c-9c58-7e05f11a3f01)
 
 # TL;DR
-A new current source topology is proposed for EDM pulse generation and also for other possible applications. It works by phase-shifting two (or multiple, perhaps more?) resonant tanks.
+A new current source topology is proposed for EDM pulse generation and also for other possible applications. It controls the output by phase-shifting the drive signal of two (or multiple, perhaps more?) resonant tanks.
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 

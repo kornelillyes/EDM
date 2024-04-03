@@ -86,9 +86,9 @@ Safety isolation can be implemented using the series capacitors. If the series c
 
 # Possible Issues
 
-1, The current somehow circulates back through the transformer from one resonant tank to the other, essentially shorting out internally through two resonant tanks and the primary coils. I don't think this can be the case as the Chinese paper got LLC to work.
+1, The current somehow circulates back through the transformer from one resonant tank to the other, essentially shorting out internally through two resonant tanks and the primary coils. I don't think this can be the case as the Chinese paper got LLC to work. Also, SPICE simulations show otherwise.
 
-2, Hard to control somehow? I haven't worked out the feedback in detail but maybe the system is in fact hard to control IRL for some reason. This also seems unlikely bc. the Chinese paper.
+2, Hard to control somehow? I haven't worked out the feedback in detail but maybe the system is in fact hard to control IRL for some reason. This also seems unlikely bc. the Chinese paper, and SPICE.
 
 3, Somehow this layout is already patented. I tried to look and didn't find anything though.
 

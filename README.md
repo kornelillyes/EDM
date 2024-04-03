@@ -20,11 +20,17 @@ followed by the extinguishing of the pulse, which may be a set time after the be
 The characteristic of *increasing the voltage* for the breakdown of the dielectric is *naturally achieved by current sources*. (Most) Current sources are also intrinsically *safe to short*, as in a short condition, the *voltage drops* rapidly, dropping the power as well. I would expect a lot of hard short conditions in an EDM power supply.
 
 # Design Considerations
+
 **1, For the CS control and feedback simplicity's sake, the design should use an external toggle for pulse generation (Or not, I would have to do the math on closed-loop  response to know precisely).** 
+
 **2, The CS should be simple to control in itself, and be resistant to rapid load changes, and short conditions**
+
 **3, The EDM supply topology should be capable of a wide range of adjustments in all relevant parameters, especially current output**
+
 **4, The EDM supply topology should use COTS parts as much as possible, and be relatively cheap**
+
 **5, The topology should be high efficiency, like 80-90+ % efficient. Resistively dropping voltages, using a lot of diodes as switching elements, hard switching, etc are to be avoided**
+
 **6, The topology should be scalable.**
 
 For considerations 2, 5, and 6, my attention was turned towards resonant topologies.

@@ -1,6 +1,6 @@
 # EDM
 This text outlines a novel EDM Current Source Idea. It is, as far as I can tell, original, and has not been proposed so far, in this exact configuration. 
-If you wish to research this topology and publish it, or reproduce it non-commercially, do so as you wish, but please mention this GitHub. Yes, I'm calling dibs on this idea. You can do what you wish with it as long as it's a non-commercial use, I seek only recognition. I would love to look deeper into this, maybe publish on this topic but it would require *a lot* of time and effort. Yes, I'm a little lazy right now, I have a lot on my plate, but I think the idea itself is interesting. Also, this might not work in the first place, so feedback is much welcomed.
+If you wish to research this topology and publish it, or reproduce it non-commercially, do so as you wish, but please mention this GitHub. Yes, I'm calling dibs on this idea. You can do what you wish with it as long as it's a non-commercial use, I seek only recognition. I would love to look deeper into this, maybe publish on this topic but it would require *a lot* of time and effort. Yes, I'm a little lazy right now, I have a lot on my plate, but I think the idea itself is interesting. Also, this might not work in the first place, so negative feedback is much welcomed.
 
 # Introduction
 I've been thinking about building an EDM (Electric Discharge Machining) setup for some years now. 

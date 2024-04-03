@@ -70,7 +70,7 @@ It is possible to use this described phase-shifted dual LCC topology to supply a
 
 Or, by Shanon and some added margin, we can use feedback and the set point to turn the supply on and off, by having a maximum EDM pulse frequency, multiplying it by 5, taking our samples for feedback at this frequency, and again multiplying by around five times to get our switching frequency. Five is more or less practical, *theoretically*, we could do with 2. In practice, it's often not enough. But this way we waste less power at the cost of reduced EDM pulse frequency and increased switching frequency. Also, it's possible this idea would lead to problems with pulse ignition, this would have to be verified by testing.  
 
-We can supplement the feedback by feedforwarding the coming pulses too, increasing response and stability.
+We can supplement the feedback by feedforwarding the coming pulses too, increasing response speed and stability.
 
 **Voltage**
 
@@ -80,6 +80,10 @@ Maximum voltage has to be controlled as this topology would lead to an overvolta
 
 EDM feed rate would have to be controlled dynamically by measuring each pulse's voltage levels and classifying it accordingly. A fuzzy or similar controller could then set the feed rate based on the frequency of a given pulse type. 
 
+**Safety Isolation**
+
+Safety isolation can be implemented using the series capacitors. If the series capacitors of both resonant tanks are split, both the positive and negative sides of the power switches can be capacitively coupled. This gives you either functional or safety isolation depending on the capacitors used.
+
 # Possible Issues
 
 1, The current somehow circulates back through the transformer from one resonant tank to the other, essentially shorting out internally through two resonant tanks and the primary coils. I don't think this can be the case as the Chinese paper got LLC to work.
@@ -88,8 +92,18 @@ EDM feed rate would have to be controlled dynamically by measuring each pulse's 
 
 3, Somehow this layout is already patented. I tried to look and didn't find anything though.
 
-4, Transformer design. Maybe this layout is prone to saturation?
+4, Transformer design. Maybe this layout is prone to saturation? 
 
+5, Voltages on the primary. Voltages on the primary and after the resonant tanks are rather high. This makes for demanding isolation requirements for the transformer and high voltage requirements for the parallel capacitors.
+
+6, High AC Currents on the capacitors.
+High AC currents on the capacitors make for demanding selection criteria.
+
+# Work so far
+
+I have simulated the phase shifted resonant tank circuits in Multisim and the results seem promising, with tweaking the component parameters this can be a workable design. 
+
+According to the SPICE simulation of course, which could mean anything and nothing in real life. But the authors of the Chinese paper made it work allegedly. 
 
 # TL;DR
 A new current source topology is proposed for EDM pulse generation and also for other possible applications. It works by phase-shifting two (or multiple, perhaps more?) resonant tanks.
